@@ -1,0 +1,23 @@
+name: Packer Deployment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'template.json'
+      - 'test_script.sh'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Image
+      run: packer build template.json
+
+    - name: Test Image
+      run: ./test_script.sh
