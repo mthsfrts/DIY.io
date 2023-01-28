@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/user/packer-project.git'
+            }
+        }
+        stage('Build Image') {
+            steps {
+                sh 'packer build -var-file=YourVARSFILE.pkr.hcl TEMPLATEFILE.pkr.hcl'
+            }
+        }
+        stage('Test Image') {
+            steps {
+                sh './test_script.sh'
+            }
+        }
+    }
+}

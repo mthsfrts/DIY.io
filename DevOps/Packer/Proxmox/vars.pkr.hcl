@@ -1,0 +1,5 @@
+proxmox_api_url          = "https://proxmoxurl:8006/api2/json"
+proxmox_api_token_id     = "root@pam!yourid"
+proxmox_api_token_secret = "api-token"
+username                 = "your-username"
+password                 = "your-password"

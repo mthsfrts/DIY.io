@@ -1,0 +1,268 @@
+#app{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-attachment: local, scroll !important;
+    background-position: center center;
+    background-image: linear-gradient(90deg, rgba(15,32,39,0.6) 0%, rgba(32,58,67,0.6) 50%, rgba(44,83,100,0.6) 100%),
+    url("https://source.unsplash.com/random/1920x1080/?landscape,nature,technology,sports,winter,ocean") !important;
+
+    /* Alternative for Unsplash Api - https://picsum.photos/1920/1080 */
+    
+    background-size: cover ;
+    background-repeat: repeat-x;
+    font-family: "roboto", monospace;
+    font-size: 14px;
+    color: #363636 !important;
+}
+
+#app #sortable,
+#app main {
+    padding: 20px;
+}
+
+.content {
+    overflow-y: scroll;
+}
+
+#config-buttons {
+    bottom: 2.5rem;
+    right: 0.5rem;
+    transform: translateY(50%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) -1px -1px 5px 0, rgba(0, 0, 0, 0.15) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px !important;
+    background-color: none !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    font-size: larger;
+    position: fixed;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#config-buttons a {
+    background: none;
+}
+
+#config-buttons a svg {
+    transition: all 0.1s ease-in-out;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+#config-buttons a:hover svg {
+    transform: scale(1.5);
+}
+ 
+.black {
+    color: white;
+}
+ 
+.item, .table{
+    box-shadow: rgba(0, 0, 0, 0.05) -1px -1px 5px 0, rgba(0, 0, 0, 0.15) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px !important;
+    border-radius: 12px;
+    background-image: none;
+    background: none !important;
+    border: none;
+    outline: none;
+    height: 100px;
+    width: 300px;
+    margin: 1.25rem;
+    padding: 1rem 55px 1rem 1rem;
+    transition: all 0.25s ease-in-out;
+    transition-property: transform, box-shadow, background-color;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+
+.add-item a {
+    font-size: medium !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+}
+
+.item:after {
+    height: 100px;
+    opacity: 0.2;
+}
+
+.item:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px -7px !important;
+}
+
+.module-container .table tbody tr:hover td:first-child:before{
+    background: none!important;
+    border-right: 2px solid white !important;
+}
+
+.item .svg-inline--fa {
+    height: 100px;
+    vertical-align: middle;
+    opacity: 0.2;
+}
+
+element.style {
+    background: none !important;
+    height: 0;
+    width: 0;
+}
+
+.create{
+    width: 740px;
+    background: none !important;
+    color: white !important;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.module-container {
+    box-shadow: rgba(0, 0, 0, 0.05) -1px -1px 5px 0, rgba(0, 0, 0, 0.15) 0px 20px 25px -5px,
+        rgba(0, 0, 0, 0.04) 0px 10px 10px -5px !important;
+    border-radius: 12px;
+    background-image: none;
+    background: none !important;
+    border: none;
+    outline: none;
+    margin: 1.25rem;
+    max-width: none !important;
+   
+}
+
+.searchform {
+    background: none !important;
+    border: none !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+
+.searchform .input-container{
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    
+}
+
+.input, .form-control{
+    width: 108% !important;
+    height: 180px;
+    background: none !important;
+}
+
+select.form-control {
+    width: 85%;
+    background: none !important;
+    color: white !important;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form-control select {
+    display: block;
+    width: 250px;
+    min-height: 35px;
+    background: none !important;
+    border-radius: 3px;
+    outline: none;
+    padding: 0 20px 0 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: white;
+   
+}
+
+.create, .module-actions .button, tbody,
+.module-container header .section-title, .module-container footer .section-title, table, .module-container .table thead th, 
+.module-container .table tbody td, .module-container .table tbody td a, tr , optgroup, select, textarea{
+    background: none !important;
+    border: none !important;;
+    border-color: none !important;
+    border-radius: 12px;
+    background-image: none;
+    color: white !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+
+.module-container header, .module-container footer {
+    background: none !important;
+    border: none !important;;
+    border-color: none !important;
+    border-radius: 12px;
+    background-image: none;
+    color: white !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px) !important;
+ 
+}
+
+.module-actions .button:after{
+    content: none !important;
+}
+
+@media only screen and (max-width: 750px) {
+  .item {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  #config-buttons {
+    display: none;
+  }
+}
+ 
+.details * {
+    color: white !important;
+    font-size: 10px !important;
+}
+.details {
+    padding: 0 0.2rem;
+    
+}
+ 
+.app-icon {
+    filter: drop-shadow(1px 1px 2px rgba(10, 0, 20, 0.1));
+}
+ 
+.livestats-container {
+    margin-top: 0.5rem;
+}
+.livestats-container .livestats .title {
+    margin-bottom: 3px;
+}
+.livestats-container .livestats li {
+    padding-right: 1rem;
+    
+}
+ 
+.livestats-container strong {
+    font-weight: 500 !important;
+    padding: 0 2px;
+}
+ 
+.details > .title {
+    font-weight: 500;
+    font-size: 1.3rem !important;
+    letter-spacing: 2px;
+    font-family: "roboto", monospace;
+    text-shadow: rgba(10, 0, 60, 0.25) 1px 0 5px;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 2px rgba(10, 0, 60, 0.25);
+    transition: all 0.25s ease-in-out;
+}
+.item:hover .details > .title {
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 5px rgba(10, 0, 60, 0.2);
+}
+.item-container .tooltip {
+    z-index: -1;
+    background-color: rgba(78, 78, 78, 0.4) !important;
+    backdrop-filter: blur(7px);
+}

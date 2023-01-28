@@ -1,0 +1,21 @@
+{
+  "fixed": [
+    "tasks 1",
+    "tasks 2",
+    "tasks 3",
+    "tasks 4",
+    "tasks 5",
+    "tasks 6",
+    "tasks 7"
+  ],
+
+  "random": [
+    "random 1",
+    "random 2",
+    "random 3",
+    "random 4",
+    "random 5",
+    "random 6",
+    "random 7"
+  ]
+}

@@ -1,0 +1,2 @@
+grpcio_tools
+kafka-python

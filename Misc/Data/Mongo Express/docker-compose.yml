@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+    mongo:
+        image: mongo
+        ports:
+            - "27017:27017"
+        volumes: 
+            - ./data:/data/db
+        restart: unless-stopped  
+
+    mongo-express:
+        image: mongo-express
+        environment:
+            - ME_CONFIG_MONGODB_SERVER="10.0.60.5"
+            - ME_CONFIG_MONGODB_PORT=27017
+            - ME_CONFIG_MONGODB_ENABLE_ADMIN='TRUE'
+            - ME_CONFIG_OPTIONS_EDITORTHEME="xq-dark"
+        depends_on:
+            - mongo
+        ports:
+          - "8082:8081"
+        volumes: 
+          - ./data:/data/db
+        restart: unless-stopped  

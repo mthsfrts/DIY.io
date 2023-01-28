@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  heimdall:
+    image: lscr.io/linuxserver/heimdall:latest
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Fortaleza
+    volumes:
+      - /path/to/appdata/config:/config
+    ports:
+      - 8500:80
+      - 8600:443
+    restart: unless-stopped
+
+
+    #token for heimdall = root@pam!heimdall - eb5ff273-1aac-4ee5-a1eb-de3c90e10e81

@@ -1,0 +1,17 @@
+body{
+    background-image: linear-gradient(90deg, rgba(15,32,39,0.6) 0%, rgba(32,58,67,0.6) 50%, rgba(44,83,100,0.6) 100%),
+        url("https://source.unsplash.com/random/1920x1080/?landscape,nature,technology,sports,winter,ocean") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    
+    #app {
+    font-family: "roboto", monospace !important;
+    font-size: 14px;
+    }
+    
+    .dark .shadow-box:not(.alert) {
+        background-color: transparent !important;
+        backdrop-filter: blur(2px) !important;
+    }

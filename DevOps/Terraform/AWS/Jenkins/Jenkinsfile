@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    tools{
+        terraform 'terraform'
+    }
+    environment {
+        GITHUB_TOKEN = credentials('github_token')
+    }
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', credentialsId: 'github_token', url: 'https://github.com/mthsfrts/Terraform.git'
+            }
+        }
+        stage("Terraform Init"){
+            steps {
+                sh 'terraform init'
+            }      
+        }
+         stage('Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+        stage('Terraform Plan') {
+
+            when {
+                expression { !currentBuild.isBuilding() && currentBuild.previousBuild.result == 'SUCCESS' }
+            }
+
+            steps {
+                sh 'terraform plan -out=tfplan'
+            }
+        }
+        stage('Terraform Apply') {
+
+            when {
+                expression { !currentBuild.isBuilding() && currentBuild.previousBuild.result == 'SUCCESS' && sh returnStatus: true, script: 'terraform show -json tfplan | jq -r ".planned_values.root_module.resources[] | select(.address | contains(\"aws_\")) | .address" | wc -l' != "0" }
+            }
+
+            steps {
+                sh 'terraform apply -auto-approve'
+                }
+            }
+    }
+}

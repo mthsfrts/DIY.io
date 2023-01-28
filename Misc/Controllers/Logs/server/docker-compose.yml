@@ -1,0 +1,130 @@
+version: '3'
+
+volumes:
+  prometheus-data:
+    driver: local
+
+  grafana-data:
+    driver: local
+
+  influxdb-data:
+    driver: local
+  
+  uptime-kuma:
+    driver: local
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - /etc/prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    restart: unless-stopped
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:2.1-alpine
+    ports:
+      - '8086:8086'
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+      - /etc/influxdb2:/etc/influxdb2
+      
+      # (Optional) If you're using self-signed certs
+      # - /etc/ssl/cert.pem/:/etc/ssl/cert.pem
+      # - /etc/ssl/cert-key.pem/:/etc/ssl/cert-key.pem
+    # (Optional) If you're using self-signed certs
+    # command: influxd --tls-cert=/etc/ssl/cert.pem --tls-key=/etc/ssl/cert-key.pem
+
+    # (Optional) Automatic Setup
+    # environment:
+    #   - DOCKER_INFLUXDB_INIT_MODE=setup
+    #   - DOCKER_INFLUXDB_INIT_USERNAME=my-user
+    #   - DOCKER_INFLUXDB_INIT_PASSWORD=my-password
+    #   - DOCKER_INFLUXDB_INIT_ORG=my-org
+    #   - DOCKER_INFLUXDB_INIT_BUCKET=my-bucket
+    # # (Optional) Configure Data Retention
+    #   - DOCKER_INFLUXDB_INIT_RETENTION=1w
+    # # (Optional) Admin Token
+    #   - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+    
+  node_exporter:
+    image: prom/node-exporter:v1.0.1
+    ports:
+      - target: 9100
+        published: 9100
+        protocol: tcp
+        mode: host
+    volumes:
+      # Remember to use read-only bind mounts.
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - "--web.listen-address=:9100"
+      - "--path.procfs=/host/proc"
+      - "--path.sysfs=/host/sys"
+      - "--path.rootfs=/rootfs" # Necessary for collecting host filesystem metrics.
+      - "--collector.filesystem.ignored-mount-points='^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)'"
+    deploy:
+      mode: global
+      
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+      - redis
+    restart: unless-stopped
+    
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - ./uptime-kuma-data:/app/data
+    ports:
+      - 3001:3001  # <Host Port>:<Container Port>
+    restart: unless-stopped
+
+  pihole_exporter:
+    build:
+      context: ./
+      args:
+        ARCH: CHANGE_ME
+      dockerfile: Dockerfile
+    image: ekofr/pihole-exporter:arm64
+    container_name: pihole_exporter
+    expose:
+      - 9617
+    environment:
+      PIHOLE_HOSTNAME: https://pihole.yourlocaldomain.com
+      INTERVAL: 30s
+      PORT: 9617
+    restart: unless-stopped 
