@@ -1,4 +1,4 @@
-## Welcome to contributing.🤝
+## Welcome to contributing DYI.io 🤝.
 
 - Products continuously change over time, specially those that are in high demand.
 
