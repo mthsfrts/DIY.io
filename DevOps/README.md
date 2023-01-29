@@ -44,4 +44,4 @@ If you witness or experience a violation of this code of conduct, please report 
 
 ## Support
 
-If you’d like to contribute to this project or if you find any issues or hard code secrety key please let me know. I will help you and appreciate the help as well. , reach out to me on social media [Instagram](https://www.instagram.com/mthsfrts/), [Telegram](https://t.me/Mthsfrts) or [Discord](https://discord.gg/Vw2Zk5ep5E), or create a pull request for the necessary changes.
+If came across any issues or hard code secrety key please let me know. I will help you and appreciate the help as well. Reach out to me on social media [Instagram](https://www.instagram.com/mthsfrts/), [Telegram](https://t.me/Mthsfrts) or [Discord](https://discord.gg/Vw2Zk5ep5E), or create a pull request for the necessary changes.
