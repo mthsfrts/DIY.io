@@ -2,6 +2,19 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/mthsfrts/DIY.io)
+
+![GitHub issues](https://img.shields.io/github/issues/mthsfrts/DIY.io)
+
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/mthsfrts/DIY.io)
+
+![Discord](https://img.shields.io/discord/1068929997739397331?style=plastic)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/mthsfrts/DIY.io)
+
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/mthsfrts/DIY.io)
+
+---
 This repository contains a collection of code and services for different programming languages and tools, including DevOps, Go, Miscellaneous, and Python. These resources can be used for various projects and purposes.
 
 ## Getting Started
