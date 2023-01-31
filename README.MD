@@ -32,10 +32,10 @@ First, you gotta be fluent in the languages and tools you want to use. Then, per
 
 ## Folders:
 
-DevOps - A treasure trove of templates and scripts for Ansible, GitHub Actions, Jenkins, Packer, Pulumi, and Terraform.
-Go - A smorgasbord of Go code and packages for all your projects.
-Miscellaneous - A hodgepodge of code and services that don't fit anywhere else.
-Python - A cornucopia of Python code and packages, because who doesn't love Python?
+[DevOps](https://github.com/mthsfrts/DIY.io/tree/master/DevOps)- A treasure trove of templates and scripts for Ansible, GitHub Actions, Jenkins, Packer, Pulumi, and Terraform.
+[Go](https://github.com/mthsfrts/DIY.io/tree/master/Go) - A smorgasbord of Go code and packages for all your projects.
+[Miscellaneous](https://github.com/mthsfrts/DIY.io/tree/master/Misc) - A hodgepodge of code and services that don't fit anywhere else.
+[Python](https://github.com/mthsfrts/DIY.io/tree/master/Python) - A cornucopia of Python code and packages, because who doesn't love Python?
 
 ## Contributing:
 
