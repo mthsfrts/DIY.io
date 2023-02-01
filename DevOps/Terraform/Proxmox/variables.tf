@@ -5,7 +5,7 @@ variable "proxmox" {
     id  = "root@pam!YOURID"
     key = "YOUR-TOKEN"
   }
-    sensitive = true
+  sensitive = true
 }
 
 variable "password" {

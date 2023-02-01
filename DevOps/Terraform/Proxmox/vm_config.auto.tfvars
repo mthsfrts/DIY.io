@@ -16,7 +16,7 @@ vm_linux = {
     gw          = "NET-Gateway",
 
     env_config = [
-      
+
     ]
   }
 }

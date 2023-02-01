@@ -14,6 +14,7 @@ resource "proxmox_lxc" "lxc_linux" {
   unprivileged    = each.value.unprivileged
   start           = each.value.start
   password        = var.password
+  onboot          = each.value.onboot
   ssh_public_keys = file(var.ssh_keys["public"])
 
 

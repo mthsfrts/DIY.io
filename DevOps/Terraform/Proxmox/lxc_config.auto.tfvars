@@ -20,8 +20,9 @@ lxc_linux = {
     nesting      = true,
     unprivileged = true,
     start        = true,
+    onboot       = true,
     env_config = [
-      
+
     ]
   }
 
