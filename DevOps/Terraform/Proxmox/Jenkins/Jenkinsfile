@@ -10,13 +10,11 @@ pipeline {
     stages {
             stage('Clone Repository') {
                 steps {
-                    git branch: 'main', credentialsId: 'github_token', url: 'https://github.com/mthsfrts/Terraform.git'
+                    git branch: 'master', credentialsId: 'github_token', url: 'your_repo_url'
                 }
             }
             stage("Terraform Init"){
                 steps {
-                    //Remote backend
-                    // sh 'terraform init -backend-config="proxmox.token=055f87ac-1ed0-4dcb-a204-695eed50ac46" -backend-config="proxmox.url=https://10.0.60.2:8006/api2/json" -backend-config="proxmox.datacenter=home-cluster" -backend-config="proxmox.node=lab"'
                     
                     //Local backend
                     sh 'terraform init'
