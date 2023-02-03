@@ -38,14 +38,22 @@ pipeline {
             steps {
                 sh 'terraform init'
                 sh 'tflint'
+                def tflintOutput = sh(returnStdout: true, script: 'tflint').trim()
+                if (tflintOutput) {
+                    echo "TFLint Errors: ${tflintOutput}"
+                } else {
+                    echo "No TFLint Errors Found"
+                }
+
                 sh 'terraform validate'
             }
         }
         stage('Final Output') {
             steps {
+                def tflintOutput = sh(returnStdout: true, script: 'tflint').trim()
+                echo "TFLint Output: ${tflintOutput}"
                 echo 'Terraform code is valid. Pipeline completed successfully!'
             }
         }
     }
 }
-
