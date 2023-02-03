@@ -5,12 +5,12 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/branch']],
+                    branches: [[name: '*/your-branch']],
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [],
                     submoduleCfg: [],
                     userRemoteConfigs: [[
-                        credentialsId: 'your-jenkins-id-credential',
+                        credentialsId: 'your-jenkins-id-credentials',
                         url: 'git@github.com:username/repo.git'
                     ]]
                 ])
