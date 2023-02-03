@@ -5,13 +5,13 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/main']],
+                    branches: [[name: '*/branch']],
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [],
                     submoduleCfg: [],
                     userRemoteConfigs: [[
-                        credentialsId: 'GitHub_ssh',
-                        url: 'git@github.com:mthsfrts/terraform.git'
+                        credentialsId: 'your-jenkins-id-credential',
+                        url: 'git@github.com:username/repo.git'
                     ]]
                 ])
             }
