@@ -8,6 +8,7 @@ services:
         - "49160:8080"
         - "49159:50000"
       container_name: jenkins
+      restart: unless_stopped
       volumes:
         - /jenkins/jenkins_configuration:/var/jenkins_home
         - /var/run/docker.sock:/var/run/docker.sock
@@ -15,8 +16,9 @@ services:
         - devops
 
     nexus:
-      image: sonatype/nexus
+      image: sonatype/nexus3
       container_name: nexus
+      restart: unless-stopped
       ports:
         - "8081:8081"
       volumes:
@@ -28,6 +30,7 @@ services:
       image: sonarqube:community
       hostname: sonarqube
       container_name: sonarqube
+      restart: unless-stopped
       depends_on:
         - db
       environment:
@@ -46,6 +49,7 @@ services:
       image: postgres:13
       hostname: postgresql
       container_name: postgresql
+      restart: unless-stopped
       environment:
         POSTGRES_USER: sonar
         POSTGRES_PASSWORD: sonar
@@ -63,7 +67,14 @@ volumes:
   jenkins_home:
     driver: local
   sonarqube_data:
+    driver: local
   sonarqube_extensions:
+    driver: local
   sonarqube_logs:
+    driver: local
+  nexus:
+    driver: local
   postgresql:
+    driver: local
   postgresql_data:
+    driver: local
