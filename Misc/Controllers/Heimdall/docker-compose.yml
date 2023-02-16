@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3"
 services:
   heimdall:
     image: lscr.io/linuxserver/heimdall:latest
@@ -13,6 +13,3 @@ services:
       - 8500:80
       - 8600:443
     restart: unless-stopped
-
-
-    #token for heimdall = root@pam!heimdall - eb5ff273-1aac-4ee5-a1eb-de3c90e10e81
