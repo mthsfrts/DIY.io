@@ -1,3 +1,9 @@
+# To use Vault pass all you keys to the vatiables you can switch the key for this format: 
+
+# variable = vault("secret/path/to/your/key")
+
+# Remember to install vault in your machine to be able to access the Vault Server
+
 variable "proxmox" {
   type = map(any)
   default = {
