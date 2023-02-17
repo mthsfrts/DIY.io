@@ -1,0 +1,42 @@
+version: '3'
+services:
+  vault:
+    image: vault:latest
+    container_name: vault
+    restart: unless-stopped
+    volumes:
+      - /vault/config:/vault/config
+      - /vault/policies:/vault/policies
+      - /vault/data:/vault/data
+      - /vault/file:/vault/file:rw
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:8200
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+      - VAULT_ADDRESS=http://0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/vault/config/vault.json
+    networks:
+      - vault
+
+    depends_on:
+      - consul
+
+  consul:
+    image: consul:latest
+    container_name: consul
+    restart: unless-stopped
+    ports:
+      - 8500:8500
+    volumes:
+      - /consul/config/consul-config.json:/consul/config/consul.json
+      - /consul/data:/consul/data
+    command: agent -server -ui -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect 1 -config-file=/consul/config/consul.json
+    networks:
+      - vault
+    
+networks:
+  vault:
+    external: true
