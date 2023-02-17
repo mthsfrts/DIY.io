@@ -1,4 +1,4 @@
-# To use Vault pass all you keys to the vatiables you can switch the key for this format: 
+# To use Vault to pass all your keys to the variables you can switch the code to this format: 
 
 # variable = vault("secret/path/to/your/key")
 
