@@ -31,6 +31,7 @@ class SpotifyDataFrame:
     # Setting up Methods
 
     def artist_data(self, artist_search):
+        
         for i, j in enumerate(artist_search['artists']['items']):
             self.artist.append(j['name'])
             self.artist_id.append(j['id'])

@@ -1,0 +1,53 @@
+# Code Smells
+
+## Complex Code
+
+* S1192: String literals should not be duplicated (https://rules.sonarsource.com/java/RSPEC-1192)
+* S3776: Cognitive Complexity of methods should not be too high (https://rules.sonarsource.com/java/RSPEC-3776)
+* S1067: Expressions should not be too complex (https://rules.sonarsource.com/java/RSPEC-1067)
+
+## Duplication
+
+* S125: Comments should not be duplicated (https://rules.sonarsource.com/java/RSPEC-125)
+* S1449: Multiple properties files should be merged into one (https://rules.sonarsource.com/java/RSPEC-1449)
+* S1465: Identical expressions should not be used on both sides of a binary operator (https://rules.sonarsource.com/java/RSPEC-1465)
+
+## Maintainability
+
+* S1144: Unused private types or methods should be removed (https://rules.sonarsource.com/java/RSPEC-1144)
+* S1172: Unused method parameters should be removed (https://rules.sonarsource.com/java/RSPEC-1172)
+* S2095: Resources should be closed (https://rules.sonarsource.com/java/RSPEC-2095)
+
+# Bugs
+
+## Error-prone Code
+
+* S1066: Collapsible "if" statements should be merged (https://rules.sonarsource.com/java/RSPEC-1066)
+* S1161: "NullPointerException" should not be caught (https://rules.sonarsource.com/java/RSPEC-1161)
+* S2187: Test methods should include assertions (https://rules.sonarsource.com/java/RSPEC-2187)
+
+## Security
+
+* S2076: OS commands should not be vulnerable to injection attacks (https://rules.sonarsource.com/java/RSPEC-2076)
+* S3649: Objects should not be serialized without security measures (https://rules.sonarsource.com/java/RSPEC-3649)
+* S5131: Hard-coded credentials should not be used (https://rules.sonarsource.com/java/RSPEC-5131)
+
+# Vulnerabilities
+
+## Injection Flaws
+
+* S3649: Objects should not be serialized without security measures (https://rules.sonarsource.com/java/RSPEC-3649)
+* S2076: OS commands should not be vulnerable to injection attacks (https://rules.sonarsource.com/java/RSPEC-2076)
+* S2068: Credentials should not be hard-coded (https://rules.sonarsource.com/java/RSPEC-2068)
+
+## Buffer Overflows
+
+* S4787: Virtual methods should not call the "finalize" method (https://rules.sonarsource.com/java/RSPEC-4787)
+* S2259: Null pointers should not be dereferenced (https://rules.sonarsource.com/java/RSPEC-2259)
+* S2755: XML parsers should not be vulnerable to XXE attacks (https://rules.sonarsource.com/java/RSPEC-2755)
+
+## Cryptography
+
+* S2245: Hard-coded encryption keys should not be used (https://rules.sonarsource.com/java/RSPEC-2245)
+* S2078: Cipher algorithms should be used with secure mode and padding (https://rules.sonarsource.com/java/RSPEC-2078)
+* S2631: CBC
