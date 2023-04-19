@@ -10,7 +10,6 @@ data = json.load(open('activities.json'))
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 hours = 18
 index = pd.date_range(start="05:00:00", freq='H', periods=hours).time
-file = f'Week_Schedule.xlsx'
 df = pd.DataFrame(index=index, columns=days)
 clean_df = df.fillna("free")
 
@@ -83,7 +82,7 @@ class schedule:
     def export_excel():
         print("Exporting Weekly Schedule!")
         #str_list = list(filter(None, []))
-        data_writer = pd.ExcelWriter("atividades_semanais.xlsx")
+        data_writer = pd.ExcelWriter("Weekly_Schedule.xlsx")
         data_frame = pd.DataFrame(clean_df)
         data_frame.to_excel(data_writer, sheet_name="matheus", index=True)
         print("Weekly Schedule Done!")
