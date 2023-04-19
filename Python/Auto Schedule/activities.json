@@ -1,0 +1,97 @@
+{
+  "fixed": [
+    {
+      "day": {
+        "Monday": [
+          {
+            "start_time": "12:00:00",
+            "duration": "02:00:00",
+            "activity": "Fixed 1"
+          },
+          {
+            "start_time": "16:00:00",
+            "duration": "02:00:00",
+            "activity": "Fixed 2"
+          },
+          {
+            "start_time": "18:00:00",
+            "duration": "03:00:00",
+            "activity": "Fixed 3"
+          }
+        ],
+        "Tuesday": [
+          {
+            "start_time": "12:00:00",
+            "duration": "02:00:00",
+            "activity": "Fixed 4"
+          }
+        ],
+        "Wednesday": [
+          {
+            "start_time": "12:00:00",
+            "duration": "01:00:00",
+            "activity": "Fixed 5"
+          }
+        ],
+        "Thursday": [
+          {
+            "start_time": "12:00:00",
+            "duration": "01:00:00",
+            "activity": "Fixed 6"
+          }
+        ],
+        "Friday": [
+          {
+            "start_time": "12:00:00",
+            "duration": "01:00:00",
+            "activity": "Fixed 7"
+          }
+        ],
+        "Saturday": [
+          {
+            "start_time": "15:00:00",
+            "duration": "05:00:00",
+            "activity": "Fixed 8"
+          }
+        ],
+        "Sunday": [
+          {
+            "start_time": "15:00:00",
+            "duration": "05:00:00",
+            "activity": "Fixed 9"
+          }
+        ]
+      }
+    }
+  ],
+  "random": [
+    {
+      "duration": "01:00:00",
+      "activity": "random 1"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 2"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 3"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 4"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 5"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 6"
+    },
+    {
+      "duration": "01:00:00",
+      "activity": "random 7"
+    }
+  ]
+}
