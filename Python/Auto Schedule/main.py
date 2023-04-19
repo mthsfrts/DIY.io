@@ -81,7 +81,6 @@ class schedule:
 
     def export_excel():
         print("Exporting Weekly Schedule!")
-        #str_list = list(filter(None, []))
         data_writer = pd.ExcelWriter("Weekly_Schedule.xlsx")
         data_frame = pd.DataFrame(clean_df)
         data_frame.to_excel(data_writer, sheet_name="matheus", index=True)
