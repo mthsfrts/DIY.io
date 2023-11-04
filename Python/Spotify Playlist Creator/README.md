@@ -31,7 +31,7 @@ _pip3 install -r requirements.txt_
 ---
 ### Running :
 
-For you be able to run the code of your on, you need a Spotify Dev Account.
+For you be able to run the code of your own, you need a Spotify Dev Account.
 After creating the account you will need the Keys that you will be prompt in your dashboard.
 
 You can find all the documentation here :
